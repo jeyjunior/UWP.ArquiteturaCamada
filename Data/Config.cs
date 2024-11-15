@@ -8,6 +8,7 @@ using Microsoft.Data.Sqlite;
 using Core.Utilidades.Enums;
 using Windows.Storage;
 using System.Data.SqlClient;
+using System.IO;
 
 
 namespace Data
@@ -25,7 +26,17 @@ namespace Data
                 case eConexao.SQLite:
                     SQLitePCL.Batteries.Init();
 
-                    string dbPath = tempFolder.Path + @"\JJTesteArquitetura.db";
+                    string dbPath = Path.Combine(tempFolder.Path, "sqlite_base.db");
+
+                    if (!File.Exists(dbPath))
+                    {
+                        using (var connection = new SqliteConnection($"Data Source={dbPath}"))
+                        {
+                            connection.Open();
+                            connection.Close();
+                        }
+                    }
+
                     return new SqliteConnection($"Data Source={dbPath}");
 
                 case eConexao.SQLServer:
