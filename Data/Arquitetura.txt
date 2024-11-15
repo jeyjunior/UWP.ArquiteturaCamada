@@ -1,0 +1,30 @@
+﻿JJCore (Biblioteca .NET Standard)
+  ├── Extensions (extensões úteis como para tipos primitivos e Dapper)
+  ├── Enums (definições de enums básicos)
+  ├── Utilities (funções utilitárias gerais)
+  ├── UnitOfWork (gerenciamento de transações e conexões de banco)
+  
+JJInfraData (Biblioteca de Infraestrutura)
+  ├── DataContext (gerenciamento de conexões de dados)
+  ├── Repositories (repositórios utilizando Dapper)
+  ├── Migrations (controle de migrações do banco de dados)
+
+JJDomain (Biblioteca de Domínio)
+  ├── Models (entidades do domínio)
+  ├── Aggregates (agregados de regras de negócio)
+  ├── Services (serviços do domínio)
+
+JJApplication (Biblioteca de Aplicação)
+  ├── Commands (definição de comandos)
+  ├── Queries (definição de consultas)
+  ├── Services (serviços de aplicação)
+
+JJPresentation (Aplicação UWP)
+  ├── Views (páginas UWP)
+  ├── ViewModels (modelos de visualização)
+  ├── Resources (recursos da interface)
+
+JJUnitTest (Biblioteca de Testes)
+  ├── ApplicationTests (testes de camada de aplicação)
+  ├── DomainTests (testes de camada de domínio)
+  ├── InfraDataTests (testes de camada de infraestrutura)
